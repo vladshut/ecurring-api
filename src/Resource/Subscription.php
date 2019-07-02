@@ -181,8 +181,8 @@ final class Subscription implements SubscriptionInterface, Creatable, Updatable
         ?bool $confirmationSent = false,
         ?Status $status = null,
         ?string $subscriptionWebhookUrl = null,
-        ?string $transactionWebhookUrl = null
-
+        ?string $transactionWebhookUrl = null,
+        ?string $successRedirectUrl = null
     ): self {
         $self = new self();
         $self->customer = $customer;
@@ -195,6 +195,7 @@ final class Subscription implements SubscriptionInterface, Creatable, Updatable
         $self->status = $status;
         $self->subscriptionWebhookUrl = $subscriptionWebhookUrl;
         $self->transactionWebhookUrl = $transactionWebhookUrl;
+        $self->successRedirectUrl = $successRedirectUrl;
 
         return $self;
     }
