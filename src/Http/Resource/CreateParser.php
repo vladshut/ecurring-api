@@ -84,7 +84,7 @@ final class CreateParser implements CreateParserInterface
         }
 
         if ($customer->getTelephone()) {
-            $data['telephone '] = $customer->getTelephone();
+            $data['telephone'] = $customer->getTelephone();
         }
 
         return [
@@ -120,35 +120,35 @@ final class CreateParser implements CreateParserInterface
         }
 
         if ($subscription->getStartDate()) {
-            $data['start_date '] = $subscription->getStartDate()->format(DateTime::ATOM);
+            $data['start_date'] = $subscription->getStartDate()->format(DateTime::ATOM);
         }
 
         if ($subscription->getStatus()) {
-            $data['status '] = $subscription->getStatus()->getValue();
+            $data['status'] = $subscription->getStatus()->getValue();
         }
 
         if ($subscription->getCancelDate()) {
-            $data['cancel_date '] = $subscription->getCancelDate()->format(DateTime::ATOM);
+            $data['cancel_date'] = $subscription->getCancelDate()->format(DateTime::ATOM);
         }
 
         if ($subscription->getResumeDate()) {
-            $data['resume_date '] = $subscription->getResumeDate()->format(DateTime::ATOM);
+            $data['resume_date'] = $subscription->getResumeDate()->format(DateTime::ATOM);
         }
 
         if ($subscription->isConfirmationSent() !== null) {
-            $data['confirmation_sent '] = $subscription->isConfirmationSent();
+            $data['confirmation_sent'] = $subscription->isConfirmationSent();
         }
 
         if ($subscription->getSubscriptionWebhookUrl()) {
-            $data['subscription_webhook_url '] = $subscription->getSubscriptionWebhookUrl();
+            $data['subscription_webhook_url'] = $subscription->getSubscriptionWebhookUrl();
         }
 
         if ($subscription->getTransactionWebhookUrl()) {
-            $data['transaction_webhook_url '] = $subscription->getTransactionWebhookUrl();
+            $data['transaction_webhook_url'] = $subscription->getTransactionWebhookUrl();
         }
 
         if ($subscription->getSuccessRedirectUrl()) {
-            $data['success_redirect_url '] = $subscription->getSuccessRedirectUrl();
+            $data['success_redirect_url'] = $subscription->getSuccessRedirectUrl();
         }
 
         return [
