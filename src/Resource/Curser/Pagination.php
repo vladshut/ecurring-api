@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Curser;
+namespace VladShut\eCurring\Resource\Curser;
 
-use LauLamanApps\eCurring\Resource\Exception\NonExistentPageNumberException;
+use VladShut\eCurring\Resource\Exception\NonExistentPageNumberException;
 
 final class Pagination
 {

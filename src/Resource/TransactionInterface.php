@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Transaction\Event;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
-use LauLamanApps\eCurring\Resource\Transaction\Status;
+use VladShut\eCurring\Resource\Transaction\Event;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\Resource\Transaction\Status;
 use Money\Money;
 use Ramsey\Uuid\UuidInterface;
 

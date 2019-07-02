@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\Customer\Gender;
-use LauLamanApps\eCurring\Resource\Customer\VerificationMethod;
-use LauLamanApps\eCurring\Resource\CustomerCollection;
-use LauLamanApps\eCurring\Resource\Proxy\SubscriptionProxy;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\Customer\Gender;
+use VladShut\eCurring\Resource\Customer\VerificationMethod;
+use VladShut\eCurring\Resource\CustomerCollection;
+use VladShut\eCurring\Resource\Proxy\SubscriptionProxy;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
 
 final class CustomerFactory extends AbstractFactory implements CustomerFactoryInterface
 {

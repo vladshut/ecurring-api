@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Product\AuthenticationMethod;
-use LauLamanApps\eCurring\Resource\Product\Status;
+use VladShut\eCurring\Resource\Product\AuthenticationMethod;
+use VladShut\eCurring\Resource\Product\Status;
 
 final class Product implements ProductInterface
 {

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Tests\Unit\Client\Factory;
+namespace VladShut\eCurring\Tests\Unit\Client\Factory;
 
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Customer\Gender;
-use LauLamanApps\eCurring\Resource\Customer\VerificationMethod;
-use LauLamanApps\eCurring\Resource\Factory\CustomerFactory;
-use LauLamanApps\eCurring\Resource\SubscriptionInterface;
-use LauLamanApps\eCurring\Tests\Unit\_helpers\AssertionTrait;
-use LauLamanApps\eCurring\Tests\Unit\_helpers\TestDataLoaderTrait;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Customer\Gender;
+use VladShut\eCurring\Resource\Customer\VerificationMethod;
+use VladShut\eCurring\Resource\Factory\CustomerFactory;
+use VladShut\eCurring\Resource\SubscriptionInterface;
+use VladShut\eCurring\Tests\Unit\_helpers\AssertionTrait;
+use VladShut\eCurring\Tests\Unit\_helpers\TestDataLoaderTrait;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;

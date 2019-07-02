@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Resource;
+namespace VladShut\eCurring\Http\Resource;
 
 use DateTime;
-use LauLamanApps\eCurring\Http\Resource\Exception\UnPostableEntityException;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\Transaction;
+use VladShut\eCurring\Http\Resource\Exception\UnPostableEntityException;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\Transaction;
 
 final class CreateParser implements CreateParserInterface
 {

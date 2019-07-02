@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Proxy;
+namespace VladShut\eCurring\Resource\Proxy;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\CustomerInterface;
-use LauLamanApps\eCurring\Resource\ProductInterface;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\Subscription\Mandate;
-use LauLamanApps\eCurring\Resource\Subscription\Status;
-use LauLamanApps\eCurring\Resource\SubscriptionInterface;
-use LauLamanApps\eCurring\Resource\TransactionInterface;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\CustomerInterface;
+use VladShut\eCurring\Resource\ProductInterface;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\Subscription\Mandate;
+use VladShut\eCurring\Resource\Subscription\Status;
+use VladShut\eCurring\Resource\SubscriptionInterface;
+use VladShut\eCurring\Resource\TransactionInterface;
 
 /**
  * @method int getId()

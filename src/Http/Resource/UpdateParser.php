@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Resource;
+namespace VladShut\eCurring\Http\Resource;
 
 use DateTime;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\Subscription;
 
 final class UpdateParser implements UpdateParserInterface
 {

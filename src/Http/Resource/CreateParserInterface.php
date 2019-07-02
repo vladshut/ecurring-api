@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Resource;
+namespace VladShut\eCurring\Http\Resource;
 
 interface CreateParserInterface
 {

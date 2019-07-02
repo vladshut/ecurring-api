@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring;
+namespace VladShut\eCurring;
 
 use GuzzleHttp\Handler\CurlHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
-use LauLamanApps\eCurring\Http\Adapter\Guzzle\Client as GuzzleClient;
-use LauLamanApps\eCurring\Http\ClientInterface;
-use LauLamanApps\eCurring\Http\Endpoint\Production;
-use LauLamanApps\eCurring\Http\Resource\CreateParser;
-use LauLamanApps\eCurring\Http\Resource\UpdateParser;
-use LauLamanApps\eCurring\Resource\Factory\CustomerFactory;
-use LauLamanApps\eCurring\Resource\Factory\ProductFactory;
-use LauLamanApps\eCurring\Resource\Factory\SubscriptionFactory;
-use LauLamanApps\eCurring\Resource\Factory\Transaction\EventFactory;
-use LauLamanApps\eCurring\Resource\Factory\TransactionFactory;
+use VladShut\eCurring\Http\Adapter\Guzzle\Client as GuzzleClient;
+use VladShut\eCurring\Http\ClientInterface;
+use VladShut\eCurring\Http\Endpoint\Production;
+use VladShut\eCurring\Http\Resource\CreateParser;
+use VladShut\eCurring\Http\Resource\UpdateParser;
+use VladShut\eCurring\Resource\Factory\CustomerFactory;
+use VladShut\eCurring\Resource\Factory\ProductFactory;
+use VladShut\eCurring\Resource\Factory\SubscriptionFactory;
+use VladShut\eCurring\Resource\Factory\Transaction\EventFactory;
+use VladShut\eCurring\Resource\Factory\TransactionFactory;
 use Psr\Http\Message\RequestInterface;
 
 final class eCurringClientFactory

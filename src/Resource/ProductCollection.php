@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Curser\Pagination;
 
 /**
  * @method Product[] getAll()

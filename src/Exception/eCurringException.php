@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Exception;
+namespace VladShut\eCurring\Exception;
 
 use Exception;
 

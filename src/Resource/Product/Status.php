@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Product;
+namespace VladShut\eCurring\Resource\Product;
 
 use Werkspot\Enum\AbstractEnum;
 

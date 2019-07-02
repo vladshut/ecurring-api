@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
 use DateTimeImmutable;
 

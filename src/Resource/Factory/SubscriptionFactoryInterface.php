@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\SubscriptionCollection;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\SubscriptionCollection;
 
 interface SubscriptionFactoryInterface
 {

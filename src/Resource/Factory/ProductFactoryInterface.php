@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Product;
-use LauLamanApps\eCurring\Resource\ProductCollection;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Product;
+use VladShut\eCurring\Resource\ProductCollection;
 
 interface ProductFactoryInterface
 {

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Http\Resource\Creatable;
-use LauLamanApps\eCurring\Http\Resource\Updatable;
-use LauLamanApps\eCurring\Resource\Exception\MandateNotAcceptedException;
-use LauLamanApps\eCurring\Resource\Subscription\Mandate;
-use LauLamanApps\eCurring\Resource\Subscription\Status;
+use VladShut\eCurring\Http\Resource\Creatable;
+use VladShut\eCurring\Http\Resource\Updatable;
+use VladShut\eCurring\Resource\Exception\MandateNotAcceptedException;
+use VladShut\eCurring\Resource\Subscription\Mandate;
+use VladShut\eCurring\Resource\Subscription\Status;
 
 final class Subscription implements SubscriptionInterface, Creatable, Updatable
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Subscription\Status;
+use VladShut\eCurring\Resource\Subscription\Status;
 
 /**
  * @method int getId()

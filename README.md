@@ -2,20 +2,14 @@ eCurring Api
 ===============
 This package provides a simple integration of the [Official eCurring][ecurring-api-documentation] for your PHP project.
 
-[![Build Status](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/badges/build.png?b=master)](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/LauLamanApps/ecurring-api/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/laulamanapps/ecurring-api/v/stable)](https://packagist.org/packages/laulamanapps/ecurring-api)
-[![License](https://poser.pugx.org/laulamanapps/ecurring-api/license)](https://packagist.org/packages/laulamanapps/ecurring-api)
-
 Installation
 ------------
 With [composer](http://packagist.org), add:
 
 ```bash
-$ composer require laulamanapps/ecurring-api
+$ composer require vladshut/ecurring-api
 ```
-This package has been created with flexability in mind, you can simply create your own http adapter by implementing the `LauLamanApps\eCurring\Http\ClientInterface`
+This package has been created with flexability in mind, you can simply create your own http adapter by implementing the `VladShut\eCurring\Http\ClientInterface`
 
 Don't wanna do the hassle? make use of the provided Guzzle adapter: require guzzlehttp in your composer:
 
@@ -32,9 +26,9 @@ Usage
 
 #### Create new Customer
 ```php
-use LauLamanApps\eCurring\eCurringClientFactory;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\eCurringClientFactory;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
 
 $client = eCurringClientFactory::create('<ApiKey>');
 
@@ -51,9 +45,9 @@ $customer = $client->createCustomer($customer);
 
 #### Add Customer to subscription
 ```php
-use LauLamanApps\eCurring\eCurringClientFactory;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\Subscription\Mandate;
+use VladShut\eCurring\eCurringClientFactory;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\Subscription\Mandate;
 
 $client = eCurringClientFactory::create('<ApiKey>');
 
@@ -83,8 +77,8 @@ $subscription = $client->createSubscription($subscription);
 
 #### Create Payment for subscription
 ```php
-use LauLamanApps\eCurring\eCurringClientFactory;
-use LauLamanApps\eCurring\Resource\Transaction;
+use VladShut\eCurring\eCurringClientFactory;
+use VladShut\eCurring\Resource\Transaction;
 use Money\Money;
 
 $client = eCurringClientFactory::create('<ApiKey>');
@@ -102,8 +96,8 @@ $transaction = $client->createTransaction($transaction);
 
 #### List Customers and iterate over them
 ```php
-use LauLamanApps\eCurring\eCurringClientFactory;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\eCurringClientFactory;
+use VladShut\eCurring\Resource\Curser\Pagination;
 
 $client = eCurringClientFactory::create('<ApiKey>');
 
@@ -132,7 +126,7 @@ $ make tests-integration
 Author
 -------
 
-eCurring API has been developed by [LauLaman].
+eCurring API has been developed by [LauLaman] and improved by [vladshut]
 
 [ecurring-api-documentation]: https://developers.nest.com/documentation
 [LauLaman]: https://github.com/LauLaman

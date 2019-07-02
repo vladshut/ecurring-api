@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Adapter\Guzzle;
+namespace VladShut\eCurring\Http\Adapter\Guzzle;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\RequestException;
-use LauLamanApps\eCurring\Exception\eCurringException;
-use LauLamanApps\eCurring\Http\Adapter\Guzzle\Exception\Handler;
-use LauLamanApps\eCurring\Http\Adapter\Guzzle\Exception\NotFoundException;
-use LauLamanApps\eCurring\Http\ClientInterface;
-use LauLamanApps\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
-use LauLamanApps\eCurring\Http\Endpoint\MapperInterface;
-use LauLamanApps\eCurring\Http\Exception\ApiCallException;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Exception\eCurringException;
+use VladShut\eCurring\Http\Adapter\Guzzle\Exception\Handler;
+use VladShut\eCurring\Http\Adapter\Guzzle\Exception\NotFoundException;
+use VladShut\eCurring\Http\ClientInterface;
+use VladShut\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
+use VladShut\eCurring\Http\Endpoint\MapperInterface;
+use VladShut\eCurring\Http\Exception\ApiCallException;
+use VladShut\eCurring\Resource\Curser\Pagination;
 use Psr\Http\Message\ResponseInterface;
 
 final class Client implements ClientInterface

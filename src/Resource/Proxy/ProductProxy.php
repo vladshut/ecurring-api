@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Proxy;
+namespace VladShut\eCurring\Resource\Proxy;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Product;
-use LauLamanApps\eCurring\Resource\Product\AuthenticationMethod;
-use LauLamanApps\eCurring\Resource\Product\Status;
-use LauLamanApps\eCurring\Resource\ProductInterface;
-use LauLamanApps\eCurring\Resource\SubscriptionInterface;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Product;
+use VladShut\eCurring\Resource\Product\AuthenticationMethod;
+use VladShut\eCurring\Resource\Product\Status;
+use VladShut\eCurring\Resource\ProductInterface;
+use VladShut\eCurring\Resource\SubscriptionInterface;
 
 /**
  * @method int getId()

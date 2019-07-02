@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Transaction\Event;
+namespace VladShut\eCurring\Resource\Transaction\Event;
 
 use Werkspot\Enum\AbstractEnum;
 

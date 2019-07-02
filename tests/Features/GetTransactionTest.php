@@ -1,10 +1,10 @@
 <?php
 
 
-namespace LauLamanApps\eCurring\Tests\Features;
+namespace VladShut\eCurring\Tests\Features;
 
-use LauLamanApps\eCurring\Http\Endpoint\MapperInterface;
-use LauLamanApps\eCurring\Http\Endpoint\Production;
+use VladShut\eCurring\Http\Endpoint\MapperInterface;
+use VladShut\eCurring\Http\Endpoint\Production;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
 

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Adapter\Guzzle\Exception;
+namespace VladShut\eCurring\Http\Adapter\Guzzle\Exception;
 
 use GuzzleHttp\Exception\RequestException;
-use LauLamanApps\eCurring\Exception\eCurringException;
+use VladShut\eCurring\Exception\eCurringException;
 
 final class Handler
 {

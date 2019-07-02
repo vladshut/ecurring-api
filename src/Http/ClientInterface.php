@@ -1,9 +1,9 @@
 <?php
 
-namespace LauLamanApps\eCurring\Http;
+namespace VladShut\eCurring\Http;
 
-use LauLamanApps\eCurring\Http\Exception\ApiCallException;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Http\Exception\ApiCallException;
+use VladShut\eCurring\Resource\Curser\Pagination;
 use Psr\Http\Message\ResponseInterface;
 
 interface ClientInterface

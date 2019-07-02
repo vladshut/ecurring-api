@@ -2,28 +2,28 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring;
+namespace VladShut\eCurring;
 
-use LauLamanApps\eCurring\Http\ClientInterface;
-use LauLamanApps\eCurring\Http\Endpoint\MapperInterface;
-use LauLamanApps\eCurring\Http\Resource\Creatable;
-use LauLamanApps\eCurring\Http\Resource\CreateParserInterface;
-use LauLamanApps\eCurring\Http\Resource\Deletable;
-use LauLamanApps\eCurring\Http\Resource\Updatable;
-use LauLamanApps\eCurring\Http\Resource\UpdateParserInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\CustomerCollection;
-use LauLamanApps\eCurring\Resource\Factory\CustomerFactoryInterface;
-use LauLamanApps\eCurring\Resource\Factory\ProductFactoryInterface;
-use LauLamanApps\eCurring\Resource\Factory\SubscriptionFactoryInterface;
-use LauLamanApps\eCurring\Resource\Factory\TransactionFactoryInterface;
-use LauLamanApps\eCurring\Resource\Product;
-use LauLamanApps\eCurring\Resource\ProductCollection;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\SubscriptionCollection;
-use LauLamanApps\eCurring\Resource\Transaction;
-use LauLamanApps\eCurring\Resource\TransactionCollection;
+use VladShut\eCurring\Http\ClientInterface;
+use VladShut\eCurring\Http\Endpoint\MapperInterface;
+use VladShut\eCurring\Http\Resource\Creatable;
+use VladShut\eCurring\Http\Resource\CreateParserInterface;
+use VladShut\eCurring\Http\Resource\Deletable;
+use VladShut\eCurring\Http\Resource\Updatable;
+use VladShut\eCurring\Http\Resource\UpdateParserInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\CustomerCollection;
+use VladShut\eCurring\Resource\Factory\CustomerFactoryInterface;
+use VladShut\eCurring\Resource\Factory\ProductFactoryInterface;
+use VladShut\eCurring\Resource\Factory\SubscriptionFactoryInterface;
+use VladShut\eCurring\Resource\Factory\TransactionFactoryInterface;
+use VladShut\eCurring\Resource\Product;
+use VladShut\eCurring\Resource\ProductCollection;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\SubscriptionCollection;
+use VladShut\eCurring\Resource\Transaction;
+use VladShut\eCurring\Resource\TransactionCollection;
 use Ramsey\Uuid\UuidInterface;
 
 final class eCurringClient implements eCurringClientInterface

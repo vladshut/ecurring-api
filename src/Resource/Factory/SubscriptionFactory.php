@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
 use DateTimeImmutable;
 use InvalidArgumentException;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Proxy\CustomerProxy;
-use LauLamanApps\eCurring\Resource\Proxy\ProductProxy;
-use LauLamanApps\eCurring\Resource\Proxy\TransactionProxy;
-use LauLamanApps\eCurring\Resource\Subscription;
-use LauLamanApps\eCurring\Resource\Subscription\Mandate;
-use LauLamanApps\eCurring\Resource\Subscription\Status;
-use LauLamanApps\eCurring\Resource\SubscriptionCollection;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Proxy\CustomerProxy;
+use VladShut\eCurring\Resource\Proxy\ProductProxy;
+use VladShut\eCurring\Resource\Proxy\TransactionProxy;
+use VladShut\eCurring\Resource\Subscription;
+use VladShut\eCurring\Resource\Subscription\Mandate;
+use VladShut\eCurring\Resource\Subscription\Status;
+use VladShut\eCurring\Resource\SubscriptionCollection;
 
 final class SubscriptionFactory extends AbstractFactory implements SubscriptionFactoryInterface
 {

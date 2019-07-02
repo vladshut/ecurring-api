@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Endpoint;
+namespace VladShut\eCurring\Http\Endpoint;
 
-use LauLamanApps\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
+use VladShut\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
 
 interface MapperInterface
 {

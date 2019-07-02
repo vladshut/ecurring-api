@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Tests\Unit\Client\Factory;
+namespace VladShut\eCurring\Tests\Unit\Client\Factory;
 
 use DateTime;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Factory\SubscriptionFactory;
-use LauLamanApps\eCurring\Resource\TransactionInterface;
-use LauLamanApps\eCurring\Tests\Unit\_helpers\AssertionTrait;
-use LauLamanApps\eCurring\Tests\Unit\_helpers\TestDataLoaderTrait;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Factory\SubscriptionFactory;
+use VladShut\eCurring\Resource\TransactionInterface;
+use VladShut\eCurring\Tests\Unit\_helpers\AssertionTrait;
+use VladShut\eCurring\Tests\Unit\_helpers\TestDataLoaderTrait;
 use Mockery;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;

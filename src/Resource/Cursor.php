@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use Iterator;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Exception\NonExistentPageNumberException;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Exception\NonExistentPageNumberException;
 
 abstract class Cursor implements Iterator
 {

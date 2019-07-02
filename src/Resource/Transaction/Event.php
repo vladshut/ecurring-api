@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Transaction;
+namespace VladShut\eCurring\Resource\Transaction;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Transaction\Event\ReasonCode;
+use VladShut\eCurring\Resource\Transaction\Event\ReasonCode;
 
 final class Event
 {

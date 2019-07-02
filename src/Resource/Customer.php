@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Http\Resource\Creatable;
-use LauLamanApps\eCurring\Http\Resource\Updatable;
-use LauLamanApps\eCurring\Resource\Customer\Gender;
-use LauLamanApps\eCurring\Resource\Customer\VerificationMethod;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\Http\Resource\Creatable;
+use VladShut\eCurring\Http\Resource\Updatable;
+use VladShut\eCurring\Resource\Customer\Gender;
+use VladShut\eCurring\Resource\Customer\VerificationMethod;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
 
 final class Customer implements CustomerInterface, Creatable, Updatable
 {

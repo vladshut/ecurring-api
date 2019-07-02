@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Proxy;
+namespace VladShut\eCurring\Resource\Proxy;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Customer;
-use LauLamanApps\eCurring\Resource\Customer\Gender;
-use LauLamanApps\eCurring\Resource\Customer\VerificationMethod;
-use LauLamanApps\eCurring\Resource\CustomerInterface;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Customer;
+use VladShut\eCurring\Resource\Customer\Gender;
+use VladShut\eCurring\Resource\Customer\VerificationMethod;
+use VladShut\eCurring\Resource\CustomerInterface;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
 
 /**
  * @method int getId()

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Tests\Unit\_helpers;
+namespace VladShut\eCurring\Tests\Unit\_helpers;
 
 use DateTime;
 use DateTimeInterface;

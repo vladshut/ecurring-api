@@ -1,5 +1,5 @@
 {
-  "name": "laulamanapps/ecurring-api",
+  "name": "vladshut/ecurring-api",
   "description": "PHP eCurring API client",
   "keywords": [
     "ecurring",
@@ -23,18 +23,18 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Laurens Laman",
-      "email": "laurens.laman@llaman.nl"
+      "name": "Vladyslav Shut",
+      "email": "fred.shut.vlad@gmail.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "LauLamanApps\\eCurring\\": ["src/"]
+      "VladShut\\eCurring\\": ["src/"]
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LauLamanApps\\eCurring\\Tests\\": ["tests/"]
+      "VladShut\\eCurring\\Tests\\": ["tests/"]
     }
   },
   "require": {

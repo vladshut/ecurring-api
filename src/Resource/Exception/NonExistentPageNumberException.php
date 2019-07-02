@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Exception;
+namespace VladShut\eCurring\Resource\Exception;
 
-use LauLamanApps\eCurring\Exception\eCurringException;
+use VladShut\eCurring\Exception\eCurringException;
 
 final class NonExistentPageNumberException extends eCurringException
 {

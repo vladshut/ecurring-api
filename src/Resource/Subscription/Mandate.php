@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Subscription;
+namespace VladShut\eCurring\Resource\Subscription;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Subscription\Exception\MandateAlreadyAcceptedException;
-use LauLamanApps\eCurring\Resource\Subscription\Exception\MandateInvalidException;
+use VladShut\eCurring\Resource\Subscription\Exception\MandateAlreadyAcceptedException;
+use VladShut\eCurring\Resource\Subscription\Exception\MandateInvalidException;
 
 final class Mandate
 {

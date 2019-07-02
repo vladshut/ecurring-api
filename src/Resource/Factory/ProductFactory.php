@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource\Factory;
+namespace VladShut\eCurring\Resource\Factory;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\eCurringClientInterface;
-use LauLamanApps\eCurring\Resource\Curser\Pagination;
-use LauLamanApps\eCurring\Resource\Product;
-use LauLamanApps\eCurring\Resource\Product\AuthenticationMethod;
-use LauLamanApps\eCurring\Resource\Product\Status;
-use LauLamanApps\eCurring\Resource\ProductCollection;
-use LauLamanApps\eCurring\Resource\Proxy\SubscriptionProxy;
+use VladShut\eCurring\eCurringClientInterface;
+use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Product;
+use VladShut\eCurring\Resource\Product\AuthenticationMethod;
+use VladShut\eCurring\Resource\Product\Status;
+use VladShut\eCurring\Resource\ProductCollection;
+use VladShut\eCurring\Resource\Proxy\SubscriptionProxy;
 
 final class ProductFactory extends AbstractFactory implements ProductFactoryInterface
 {

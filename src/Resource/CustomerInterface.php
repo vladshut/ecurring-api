@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Resource;
+namespace VladShut\eCurring\Resource;
 
 use DateTimeImmutable;
-use LauLamanApps\eCurring\Resource\Customer\Gender;
-use LauLamanApps\eCurring\Resource\Customer\VerificationMethod;
-use LauLamanApps\eCurring\Resource\Transaction\PaymentMethod;
+use VladShut\eCurring\Resource\Customer\Gender;
+use VladShut\eCurring\Resource\Customer\VerificationMethod;
+use VladShut\eCurring\Resource\Transaction\PaymentMethod;
 
 /**
  * @method int getId()

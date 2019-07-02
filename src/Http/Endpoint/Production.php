@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LauLamanApps\eCurring\Http\Endpoint;
+namespace VladShut\eCurring\Http\Endpoint;
 
 use Exception;
-use LauLamanApps\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
+use VladShut\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
 
 final class Production implements MapperInterface
 {
