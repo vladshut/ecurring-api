@@ -9,9 +9,13 @@ use Psr\Http\Message\ResponseInterface;
 interface ClientInterface
 {
     /**
-     * @throws ApiCallException
+     * @param string $endpoint
+     * @param array|null $urlBits
+     * @param Pagination|null $page
+     * @param array|null $include
+     * @return ResponseInterface
      */
-    public function getEndpoint(string $endpoint, ?array $urlBits = [], ?Pagination $page = null): ResponseInterface;
+    public function getEndpoint(string $endpoint, ?array $urlBits = [], ?Pagination $page = null, ?array $include = null): ResponseInterface;
 
     /**
      * @throws ApiCallException

@@ -3,13 +3,17 @@
 
 namespace VladShut\eCurring\Tests\Features;
 
-use VladShut\eCurring\Http\Endpoint\MapperInterface;
-use VladShut\eCurring\Http\Endpoint\Production;
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;
+use VladShut\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
+use VladShut\eCurring\Http\Endpoint\MapperInterface;
+use VladShut\eCurring\Http\Endpoint\Production;
 
 class GetTransactionTest extends TestCase
 {
+    /**
+     * @throws EndpointCouldNotBeMappedException
+     */
     public function testGetTransaction()
     {
         $production = new Production();

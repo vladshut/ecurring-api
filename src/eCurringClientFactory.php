@@ -23,14 +23,22 @@ final class eCurringClientFactory
 {
     public static function create(string $apiKey): eCurringClient
     {
+        $customerFactory = new CustomerFactory();
+        $productFactory = new ProductFactory();
+        $transactionFactory = new TransactionFactory(new EventFactory());
+        $subscriptionFactory = new SubscriptionFactory($customerFactory, $productFactory, $transactionFactory);
+
+        $createParser = new CreateParser();
+        $updateParser = new UpdateParser();
+
         return new eCurringClient(
             self::createHttpClient($apiKey),
-            new CustomerFactory(),
-            new SubscriptionFactory(),
-            new ProductFactory(),
-            new TransactionFactory(new EventFactory()),
-            new CreateParser(),
-            new UpdateParser()
+            $customerFactory,
+            $subscriptionFactory,
+            $productFactory,
+            $transactionFactory,
+            $createParser,
+            $updateParser
         );
     }
 

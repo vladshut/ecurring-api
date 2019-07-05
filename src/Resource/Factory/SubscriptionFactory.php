@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use InvalidArgumentException;
 use VladShut\eCurring\eCurringClientInterface;
 use VladShut\eCurring\Resource\Curser\Pagination;
+use VladShut\eCurring\Resource\Customer;
 use VladShut\eCurring\Resource\Proxy\CustomerProxy;
 use VladShut\eCurring\Resource\Proxy\ProductProxy;
 use VladShut\eCurring\Resource\Proxy\TransactionProxy;
@@ -18,6 +19,31 @@ use VladShut\eCurring\Resource\SubscriptionCollection;
 
 final class SubscriptionFactory extends AbstractFactory implements SubscriptionFactoryInterface
 {
+    /** @var CustomerFactory */
+    private $customerFactory;
+
+    /** @var ProductFactory */
+    private $productFactory;
+
+    /** @var TransactionFactory */
+    private $transactionFactory;
+
+    /**
+     * SubscriptionFactory constructor.
+     * @param CustomerFactory $customerFactory
+     * @param ProductFactory $productFactory
+     * @param TransactionFactory $transactionFactory
+     */
+    public function __construct(
+        CustomerFactory $customerFactory,
+        ProductFactory $productFactory,
+        TransactionFactory $transactionFactory
+    ) {
+        $this->customerFactory = $customerFactory;
+        $this->productFactory = $productFactory;
+        $this->transactionFactory = $transactionFactory;
+    }
+
     public function fromArray(eCurringClientInterface $client, array $data, Pagination $page): SubscriptionCollection
     {
         $subscriptions = [];
@@ -29,17 +55,35 @@ final class SubscriptionFactory extends AbstractFactory implements SubscriptionF
         return new SubscriptionCollection($client, $page->getNumber(), $totalPages, $subscriptions);
     }
 
-    public function fromData(eCurringClientInterface $client, array $data): Subscription
+    public function fromData(eCurringClientInterface $client, array $data, array $included = null): Subscription
     {
-        return Subscription::fromData(
+        $customer = $this->getCustomerProxy($client, $data['relationships']);
+        $subscriptionPlan = $this->getSubscriptionPlanProxy($client, $data['relationships']);
+        $transactions = [];
+
+        if (!empty($included)) {
+            foreach ($included as $item) {
+                if ($item['type'] === 'customer') {
+                    $customer = $this->customerFactory->fromData($client, $item);
+                } elseif ($item['type'] === 'subscription-plan') {
+                    $subscriptionPlan = $this->productFactory->fromData($client, $item);
+                } elseif ($item['type'] === 'transaction') {
+                    $transactions[] = $this->transactionFactory->fromData($item);
+                }
+            }
+        }
+
+        $transactions = empty($transactions) ? $this->getTransactionProxies($client, $data['relationships']) : $transactions;
+
+        $subscription = Subscription::fromData(
             $this->extractInteger('id', $data),
             $this->getMandate($data['attributes']),
             new DateTimeImmutable($data['attributes']['start_date']),
             Status::get($data['attributes']['status']),
             $data['attributes']['confirmation_page'],
-            $this->extractBoolean('confirmation_sent', $data),
-            $this->getCustomerProxy($client, $data['relationships']),
-            $this->getSubscriptionPlanProxy($client, $data['relationships']),
+            $this->extractBoolean('confirmation_sent', $data['attributes']),
+            $customer,
+            $subscriptionPlan,
             new DateTimeImmutable($data['attributes']['created_at']),
             new DateTimeImmutable($data['attributes']['updated_at']),
             $this->extractStringOrNull('subscription_webhook_url', $data['attributes']),
@@ -47,8 +91,10 @@ final class SubscriptionFactory extends AbstractFactory implements SubscriptionF
             $this->extractStringOrNull('success_redirect_url', $data['attributes']),
             $this->extractDateTimeImmutableOrNull('cancel_date', $data['attributes']),
             $this->extractDateTimeImmutableOrNull('resume_date', $data['attributes']),
-            ...$this->getTransactionProxies($client, $data['relationships'])
+            ...$transactions
         );
+
+        return $subscription;
     }
 
     private function getMandate(array $data): Mandate
@@ -79,24 +125,26 @@ final class SubscriptionFactory extends AbstractFactory implements SubscriptionF
     }
 
     /**
+     * @param eCurringClientInterface $client
+     * @param array $relationships
      * @return TransactionProxy[]
      */
-    private function getTransactionProxies(eCurringClientInterface $client, array $transactions): array
+    private function getTransactionProxies(eCurringClientInterface $client, array $relationships): array
     {
-        if (!isset($transactions['transactions'])) {
+        if (!isset($relationships['transactions'])) {
             return [];
         }
 
-        $subscriptions = [];
+        $transactions = [];
 
-        foreach ($transactions['transactions']['data'] as $subscription) {
+        foreach ($relationships['transactions']['data'] as $subscription) {
             if ($subscription['type'] !== 'transaction') {
                 continue;
             }
 
-            $subscriptions[] = new TransactionProxy($client, $subscription['id']);
+            $transactions[] = new TransactionProxy($client, $subscription['id']);
         }
 
-        return $subscriptions;
+        return $transactions;
     }
 }

@@ -6,6 +6,7 @@ namespace VladShut\eCurring\Http\Adapter\Guzzle;
 
 use GuzzleHttp\ClientInterface as GuzzleClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use Psr\Http\Message\ResponseInterface;
 use VladShut\eCurring\Exception\eCurringException;
 use VladShut\eCurring\Http\Adapter\Guzzle\Exception\Handler;
 use VladShut\eCurring\Http\Adapter\Guzzle\Exception\NotFoundException;
@@ -14,7 +15,6 @@ use VladShut\eCurring\Http\Endpoint\Exception\EndpointCouldNotBeMappedException;
 use VladShut\eCurring\Http\Endpoint\MapperInterface;
 use VladShut\eCurring\Http\Exception\ApiCallException;
 use VladShut\eCurring\Resource\Curser\Pagination;
-use Psr\Http\Message\ResponseInterface;
 
 final class Client implements ClientInterface
 {
@@ -37,13 +37,33 @@ final class Client implements ClientInterface
     }
 
     /**
+     * @param string $endpoint
+     * @param array|null $urlBits
+     * @param Pagination|null $page
+     * @param array|null $include
      * @throws EndpointCouldNotBeMappedException
-     * @throws eCurringException
      * @throws NotFoundException
+     * @throws eCurringException
+     * @return ResponseInterface
      */
-    public function getEndpoint(string $endpoint, ?array $urlBits = [], ?Pagination $page = null): ResponseInterface
-    {
-        $options = $page ? ['query' => $page->getQueryOptions()] : [];
+    public function getEndpoint(
+        string $endpoint,
+        ?array $urlBits = [],
+        ?Pagination $page = null,
+        ?array $include = null
+    ): ResponseInterface {
+        $options = [];
+        $query = [];
+
+        if ($page) {
+            $query += $page->getQueryOptions();
+        }
+
+        if (!empty($include)) {
+            $query['include'] = implode(',', $include);
+        }
+
+        $options = empty($query) ? [] : compact('query');
 
         return $this->get(
             $this->endpointMapper->map($endpoint, $urlBits),
@@ -75,7 +95,7 @@ final class Client implements ClientInterface
         try {
             $response = $this->guzzleClient->get($url, $options);
 
-            $this->wasSuccessfulRequest($response);
+            $this->wasSuccessfulRequest($response, $url, $options);
 
             return $response;
         } catch (RequestException $exception) {
@@ -103,7 +123,7 @@ final class Client implements ClientInterface
     {
         try {
             $response = $this->guzzleClient->post($url, $options);
-            $this->wasSuccessfulRequest($response);
+            $this->wasSuccessfulRequest($response, $url, $options);
 
             return $response;
         } catch (RequestException $exception) {
@@ -131,7 +151,7 @@ final class Client implements ClientInterface
     {
         try {
             $response = $this->guzzleClient->patch($url, $options);
-            $this->wasSuccessfulRequest($response);
+            $this->wasSuccessfulRequest($response, $url, $options);
 
             return $response;
         } catch (RequestException $exception) {
@@ -159,7 +179,7 @@ final class Client implements ClientInterface
     {
         try {
             $response = $this->guzzleClient->delete($url, $options);
-            $this->wasSuccessfulRequest($response);
+            $this->wasSuccessfulRequest($response, $url, $options);
 
             return $response;
         } catch (RequestException $exception) {
@@ -170,7 +190,7 @@ final class Client implements ClientInterface
     /**
      * @throws ApiCallException
      */
-    private function wasSuccessfulRequest(ResponseInterface $response): void
+    private function wasSuccessfulRequest(ResponseInterface $response, string $url, array $options): void
     {
         switch ($response->getStatusCode()) {
             case 200:
@@ -184,10 +204,12 @@ final class Client implements ClientInterface
             default:
                 throw new ApiCallException(
                     sprintf(
-                        '%s %s: %s',
+                        "%s %s: %s \n URL: %s \n Request Body: %s",
                         $response->getStatusCode(),
                         $response->getReasonPhrase(),
-                        $response->getBody()->getContents()
+                        $response->getBody()->getContents(),
+                        $url,
+                        json_encode($options)
                     )
                 );
         }

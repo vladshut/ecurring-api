@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace VladShut\eCurring;
 
+use Ramsey\Uuid\UuidInterface;
 use VladShut\eCurring\Http\ClientInterface;
 use VladShut\eCurring\Http\Endpoint\MapperInterface;
 use VladShut\eCurring\Http\Resource\Creatable;
@@ -24,7 +25,6 @@ use VladShut\eCurring\Resource\Subscription;
 use VladShut\eCurring\Resource\SubscriptionCollection;
 use VladShut\eCurring\Resource\Transaction;
 use VladShut\eCurring\Resource\TransactionCollection;
-use Ramsey\Uuid\UuidInterface;
 
 final class eCurringClient implements eCurringClientInterface
 {
@@ -168,13 +168,24 @@ final class eCurringClient implements eCurringClientInterface
         );
     }
 
-    public function getSubscription(string $id): Subscription
+    /**
+     * @param string $id
+     * @param array|null $include
+     * @return Subscription
+     */
+    public function getSubscription(string $id, array $include = null): Subscription
     {
         $json = $this->httpClient->getJson(
-            $this->httpClient->getEndpoint(MapperInterface::GET_SUBSCRIPTION, [$id])
+            $this->httpClient->getEndpoint(MapperInterface::GET_SUBSCRIPTION, [$id], null, $include)
         );
 
-        return $this->subscriptionFactory->fromData($this, $this->decodeJsonToArray($json)['data']);
+        $array = $this->decodeJsonToArray($json);
+        $data = $array['data'];
+        $included = $array['included'] ?? null;
+
+        $subscription = $this->subscriptionFactory->fromData($this, $data, $included);
+
+        return $subscription;
     }
 
     public function getSubscriptionTransactions(Subscription $subscription, ?Pagination $pagination = null): TransactionCollection
@@ -194,7 +205,6 @@ final class eCurringClient implements eCurringClientInterface
     /**
      * @param UuidInterface $id
      * @return Transaction
-     * @throws Http\Exception\ApiCallException
      */
     public function getTransaction(UuidInterface $id): Transaction
     {

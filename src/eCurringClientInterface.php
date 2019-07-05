@@ -52,7 +52,7 @@ interface eCurringClientInterface
      */
     public function getSubscriptions(?Pagination $page = null): SubscriptionCollection;
 
-    public function getSubscription(string $id): Subscription;
+    public function getSubscription(string $id, array $include = null): Subscription;
 
     /**
      * @return Transaction[]

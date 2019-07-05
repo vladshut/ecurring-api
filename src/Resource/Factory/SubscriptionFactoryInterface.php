@@ -11,7 +11,7 @@ use VladShut\eCurring\Resource\SubscriptionCollection;
 
 interface SubscriptionFactoryInterface
 {
-    public function fromData(eCurringClientInterface $client, array $data): Subscription;
+    public function fromData(eCurringClientInterface $client, array $data, array $included = null): Subscription;
 
     /**
      * @return Subscription[]
