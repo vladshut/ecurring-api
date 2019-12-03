@@ -22,4 +22,5 @@ final class Status extends AbstractEnum
     private const CANCELLED = 'cancelled';
     private const PAUSED = 'paused';
     private const UNVERIFIED = 'unverified';
+    private const SUSPENDED = 'suspended';
 }
